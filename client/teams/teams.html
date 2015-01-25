@@ -1,0 +1,35 @@
+<template name="teams">
+  <div class="page-header">
+    <h1>Team <small>Page</small></h1>
+  </div>
+<!--   <form class="form select-team">
+    <div class="form-group">
+      <label>Current Team</label>
+      <select class="form-control" id="my-team-select">
+        {{#each myteams}}
+          <option>{{name}}</option>
+        {{/each}}       
+      </select>
+    </div>
+  </form>
+-->
+  <ul class="list-group">
+    {{#each teams}}
+    {{> eachteam}}
+    {{/each}}    
+    <li class="list-group-item">
+      <form id="newteam">
+        <input class="simplebox" type="text" name="text" placeholder="Type to add a new team" />
+      </form>
+    </li>
+  </ul>
+</template>
+
+<template name="eachteam">
+  <l1 class="list-group-item {{#if selected}}myactive{{/if}}">
+    <span class="text">{{name}}</span>
+    <button type="button" class="btn btn-sm delete">
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    </button>
+  </l1>
+</template>
